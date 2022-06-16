@@ -5,7 +5,8 @@ set(PLUGIN_NAME "TestTwo")
 # These are all the filters in the plugin. All filters should be kept in the
 # PLUGIN_NAME/src/PLUGIN_NAME/Filters/ directory.
 set(FilterList
-  Test2Filter
+  #Test2Filter
+  Test3Filter
 )
 
 create_complex_plugin(NAME ${PLUGIN_NAME}
@@ -42,3 +43,8 @@ create_complex_plugin(NAME ${PLUGIN_NAME}
 #     PUBLIC
 #     additional include directories here
 # )
+
+#------------------------------------------------------------------------------
+# Add in the unit tests for the filters included in this plugin
+enable_testing()
+add_subdirectory(${${PLUGIN_NAME}_SOURCE_DIR}/test)
